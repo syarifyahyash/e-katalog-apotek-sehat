@@ -1,0 +1,14 @@
+.label-table {
+    background-color: #609966;
+    color: rgb(255, 255, 255);
+}
+
+#edit:hover{
+    background-color: #609966;
+    color: #ffffff;
+}
+
+#addData,
+#cari{
+    background-color: #609966;
+}
