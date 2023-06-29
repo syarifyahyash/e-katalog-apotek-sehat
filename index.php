@@ -13,6 +13,12 @@ if (!empty($_SESSION['username'])){
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<link rel="stylesheet" href="bootstrap-4/css/bootstrap.min.css">
 	<link rel="stylesheet" href="css/style-index.css">
+	<script src="bootstrap-4/js/jquery-3.3.1.slim.min.js"></script>
+    <script src="bootstrap-4/js/popper.min.js"></script>
+    <script src="bootstrap-4/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="izitoast/dist/css/iziToast.min.css">
+	<script src="izitoast/dist/js/iziToast.min.js" type="text/javascript"></script>
+
 	<title>Apotek Web Catalog</title>
 	<link rel="icon" type="image/png" href="img/logo_apotik.png" sizes="16x16"/>
 </head>
@@ -33,7 +39,8 @@ if (!empty($_SESSION['username'])){
 					<label for="password">Password</label>
 					<input type="password" class="form-control" id="password" name="password">
 				</div>
-				<button type="submit" name="login" class="btn-login btn btn-outline-success btn-block">Login</button>
+				<button type="submit" name="login" class="btn-login btn btn-outline-success btn-block">Login</button><br>
+				<button type="submit" name="guest" class="guest btn-login btn btn-success btn-block">Login sebagai Pengunjung</button>
 			</form>
 			
 		</div>
@@ -42,33 +49,15 @@ if (!empty($_SESSION['username'])){
 </div> <!-- end container -->
 
 <?php if(isset($_GET['login'])=="gagal"){?>
-	<div class="">
-		<div class="alert alert-danger alert-dismissible fade show" role="alert">
-		<strong>Username atau Password Salah!</strong> <br> Silahkan coba lagi.
-		<button type="button" class="close" data-dismiss="alert" aria-label="Close">
-			<span aria-hidden="true">&times;</span>
-		</button>
-		</div>
-	</div>
-	<style>
-		.alert{
-			position: absolute;
-			top: 10px;
-			left: 0;
-			right: 0;
-			margin: auto;
-			width: 400px;
-		}
-
-	</style>
 	<script>
-    // Mengambil elemen alert
-    const alertElement = document.querySelector('.alert');
-
-    // Mengatur timeout untuk menghapus alert
-    setTimeout(() => {
-        alertElement.remove(); // Menghapus elemen alert dari DOM
-    }, 3000); // Mengatur waktu delay dalam milidetik (dalam contoh ini 3000 ms = 3 detik)
+		iziToast.error({
+			title: 'Login Gagal!',
+			message: 'Username atau Password Salah! Silahkan coba lagi.',
+			position: 'topCenter',
+			timeout: 5000,
+			transitionIn: 'bounceInUp',
+    		transitionOut: 'fadeOutUp'
+		});
 	</script>
 <?php } ?>
 
@@ -86,16 +75,36 @@ if(isset($_POST['login'])){ //jika tombol submit di klik
 	  $_SESSION['username']     = $r['username'];
 	  $_SESSION['nama_lengkap']  = $r['nama_lengkap'];
 	  $_SESSION['sebagai']  = $r['sebagai'];
+	  $_SESSION['login_success_notif'] = false;
 	  
 	  header("location:admin.php?menu=home");
 	}else{
 	  header("location:index.php?login=gagal");
 	}
-	
 }
+
+elseif(isset($_POST['guest'])){
+	$username = "guest";
+	$pass     = md5("guest");
+	$login=mysqli_query($koneksi,"SELECT * FROM user WHERE username='$username' AND password='$pass' ");
+	//utk mengetahui jumlah baris dari $login
+	$ketemu=mysqli_num_rows($login);
+	$r=mysqli_fetch_array($login);
+	// Apabila username dan password ditemukan
+	if ($ketemu > 0){  
+	  $_SESSION['username']     = $r['username'];
+	  $_SESSION['nama_lengkap']  = $r['nama_lengkap'];
+	  $_SESSION['sebagai']  = $r['sebagai'];
+	  $_SESSION['login_success_notif'] = false;
+	  
+	  header("location:admin.php?menu=home");
+	}else{
+	  header("location:index.php?login=gagal");
+	}
+}
+	
+
 ?>
-    <script src="bootstrap-4/js/jquery-3.3.1.slim.min.js"></script>
-    <script src="bootstrap-4/js/popper.min.js"></script>
-    <script src="bootstrap-4/js/bootstrap.min.js"></script>
+    
 </body>
 </html>

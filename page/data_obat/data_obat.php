@@ -11,8 +11,9 @@ default:
 <hr/>
 <div class="row">
 	<div class="col-sm">
-	  <h4>Data Obat</h4>
-	  <form method="POST" action="">
+	  <h4 class="float-left">Data Obat</h4> 
+	  <a href="?menu=data_obat&submenu=tambah" class="btn-add btn btn-success float-right" id="addData">Tambah Data Obat</a>
+	  <!-- <form method="POST" action="">
 		<div class="input-group mb-3">
 		  <div class="input-group-prepend">
 			<a href="?menu=data_obat&submenu=tambah" class="btn btn-success" id="addData">Tambah Data Obat</a>
@@ -22,19 +23,20 @@ default:
 			<button class="btn btn-success btn-sm" id="cari" type="submit" name="cari">Cari</button>
 		  </div>
 		</div>
-	  </form>
-	 <div class="table-responsive ">
-	 <table class="table table-hover">
+	  </form> -->
+	 <div class="table-responsive">
+	 <table id="myTable" class="table table-hover">
 	  <thead class="label-table">
 		<tr>
-			<th>No</th>
-			<th>Nama Obat</th>
-			<th>Indikasi</th>
-			<th>Stok</th>
-			<th>Tgl Expired</th>
-			<th>Harga</th>
-			<th>Edit</th>
-			<th>Delete</th>
+			<th >No</th>
+			<th >Nama Obat</th>
+			<th >Kategori</th>
+			<th >Indikasi</th>
+			<th >Stok</th>
+			<th class="p-1">Tgl Expired</th>
+			<th >Harga</th>
+			<th class="text-center">Edit</th>
+			<th class="text-center">Delete</th>
 		</tr>
 	  </thead>
 	  <tbody>
@@ -45,6 +47,15 @@ default:
 	}else{
 		$query=mysqli_query($koneksi, "SELECT * FROM obat ORDER BY id_obat asc");
 	}
+
+	// Mengambil data jenis obat dari tabel jenis_obat
+	$query_jenis_obat = mysqli_query($koneksi, "SELECT * FROM kategori");
+	$jenis_obat_array = array();
+
+	// Memasukkan data jenis obat ke dalam array
+	while ($jenis_obat = mysqli_fetch_assoc($query_jenis_obat)) {
+		$jenis_obat_array[$jenis_obat['id_kategori']] = $jenis_obat['nama_kategori'];
+	}
 	
 	$no=1;
 	while($d=mysqli_fetch_assoc($query)){ 
@@ -53,15 +64,16 @@ default:
 		<tr>
 			<td><?= $no; ?></td>
 			<td><?= $d['nama_obat']; ?></td>
+			<td><?= $jenis_obat_array[$d['kategori_obat']]; ?></td>
 			<td><?= $d['indikasi']; ?></td>
 			<td><?= $d['stok_obat']; ?></td>
 			<td><?= $d['tanggal_expired']; ?></td>
 			<td><?= $d['harga']; ?></td>
 			<td>
-				<a class="btn btn-outline-success" id="edit" href="?menu=data_obat&submenu=edit&id=<?= $d['id_obat'];?>">Edit</a>
+				<a class="btn-edit btn btn-outline-success btn-sm text-center" id="edit" href="?menu=data_obat&submenu=edit&id=<?= $d['id_obat'];?>">Edit</a>
 			</td>
 			<td>
-				<a class="btn btn-outline-danger" id="hapus" href="?menu=data_obat&submenu=hapus&id=<?= $d['id_obat'];?>" 
+				<a class="btn-del btn btn-outline-danger btn-sm text-center" id="hapus" href="?menu=data_obat&submenu=hapus&id=<?= $d['id_obat'];?>" 
 				onClick="return confirm('Yakin mau di hapus?');">Delete</a>
 			</td>
 		</tr>

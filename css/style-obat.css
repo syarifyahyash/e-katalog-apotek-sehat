@@ -1,6 +1,7 @@
 .label-table {
     background-color: #609966;
     color: rgb(255, 255, 255);
+    text-align: center;
 }
 
 #edit:hover{
@@ -11,4 +12,22 @@
 #addData,
 #cari{
     background-color: #609966;
+}
+
+.footer{
+    display: block;
+}
+
+.btn-sm {
+    padding: 1px 1px;
+    font-size: 11px;
+    border-radius: 1px;
+    width: 50px;
+}
+
+.btn-add{
+    padding: 1px 1px;
+    font-size: 12px;
+    border-radius: 1px;
+    width: 110px;
 }

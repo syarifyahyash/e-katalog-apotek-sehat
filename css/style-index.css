@@ -21,6 +21,25 @@ body{
     border-color: #609966;
 }
 
+.guest{
+    background-color: #ffffff;
+    border-color: #ffffff;
+    color: #609966;
+}
+
+.guest:hover{
+    background-color: #ffffff;
+    border-color: #ffffff;
+    color: #5ec068;
+}
+
+.guest:active{
+    background-color: #ffffff;
+    border-color: #ffffff;
+    color: #5ec068;
+}
+
+
 .container{
     margin-top: 90px;
     margin-bottom: 100px;
@@ -51,3 +70,16 @@ input[type=password]{
     border-color: #609966;
 }
 
+.link-guest{
+    color: #609966;
+    font: 16px 'Helvetica';
+    /* center */
+    display: block;
+    margin: auto;
+    text-align: center;
+}
+
+.link-guest:hover{
+    color: #12d826;
+    
+}
