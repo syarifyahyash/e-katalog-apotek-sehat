@@ -5,8 +5,7 @@ Dengan adanya E-KAS, calon pembeli dapat mengetahui informasi obat-obatan yang a
 Kami harap dengan adanya E-KAS dapat membantu masyarakat dalam menyajikan informasi terkait obat-obatan yang akan dibeli.
 
 ## Tech
-Dillinger uses a number of open source projects to work properly:
-E-KAS Menggunakan beberapa bahasa pemrograman, framework dan library : 
+E-KAS Menggunakan beberapa bahasa pemrograman, framework dan library agar dapat bekerja dengan semestinya : 
 
 - [Bootstrap v4.6](https://getbootstrap.com/docs/4.0/getting-started/introduction/) - Salah satu framework atau Kerangka kerja CSS paling populer di dunia untuk membangun situs yang responsif.
 - [jQuery](https://jquery.com/) - Library JavaScript yang cepat, kecil, dan kaya fitur. Itu membuat hal-hal seperti traversal dan manipulasi dokumen HTML, penanganan acara, animasi dll.
