@@ -14,3 +14,11 @@ E-KAS Menggunakan beberapa bahasa pemrograman, framework dan library :
 - [DataTable](https://datatables.net/) - Tambahkan kontrol interaksi lanjutan ke tabel HTML Anda dengan cara gratis & mudah.
 
 Dan tentu saja E-KAS tersedia di [repositori publik](https://github.com/syarifyahyash/web-apotek/) di Github.
+
+## Installation
+E-KAS requires a Webserver and Database Server such as Apache and MySQL.
+
+- Download ZIP in repository [Github](https://github.com/syarifyahyash/web-apotek/)
+- Extract then move to htdocs localhost
+- Run in browser with URL `localhost/web-apotek`
+- Done
