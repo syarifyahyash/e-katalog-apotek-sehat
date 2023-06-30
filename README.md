@@ -4,7 +4,7 @@ E-KAS adalah Aplikasi Apotek E-Katalog atau Katalog Online Berbasis Web untuk me
 Dengan adanya E-KAS, calon pembeli dapat mengetahui informasi obat-obatan yang akan dibeli seperti ketersediaan obat, harga obat dan lainnya. 
 Kami harap dengan adanya E-KAS dapat membantu masyarakat dalam menyajikan informasi terkait obat-obatan yang akan dibeli.
 
-## Tech
+## Tech / Teknologi
 E-KAS Menggunakan beberapa bahasa pemrograman, framework dan library agar dapat bekerja dengan semestinya : 
 
 - [Bootstrap v4.6](https://getbootstrap.com/docs/4.0/getting-started/introduction/) - Salah satu framework atau Kerangka kerja CSS paling populer di dunia untuk membangun situs yang responsif.
