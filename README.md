@@ -29,3 +29,7 @@ Langkah langkah instalasi :
 - Ekstrak lalu pindahkan ke htdocs localhost
 - jalankan di browser dengan URL `localhost/web-apotek`
 - Selesai
+
+## Anggota
+- Muh. Syarif Yahya S.H.
+- Abdul Adim Mubarok
