@@ -3,3 +3,13 @@
 E-KAS adalah Aplikasi Apotek E-Katalog atau Katalog Online Berbasis Web untuk membantu calon pembeli. 
 Dengan adanya E-KAS, calon pembeli dapat mengetahui informasi obat-obatan yang akan dibeli seperti ketersediaan obat, harga obat dan lainnya. 
 Kami harap dengan adanya E-KAS dapat membantu masyarakat dalam menyajikan informasi terkait obat-obatan yang akan dibeli.
+
+## Tech
+Dillinger uses a number of open source projects to work properly:
+E-KAS Menggunakan beberapa bahasa pemrograman, framework dan library : 
+
+- [Bootstrap v4.6](https://getbootstrap.com/docs/4.0/getting-started/introduction/) - Salah satu framework atau Kerangka kerja CSS paling populer di dunia untuk membangun situs yang responsif.
+- [jQuery] - Library JavaScript yang cepat, kecil, dan kaya fitur. Itu membuat hal-hal seperti traversal dan manipulasi dokumen HTML, penanganan acara, animasi dll.
+- 
+
+Dan tentu saja E-KAS tersedia di [repositori publik](https://github.com/syarifyahyash/web-apotek/) di Github.
