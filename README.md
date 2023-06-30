@@ -22,3 +22,11 @@ E-KAS requires a Webserver and Database Server such as Apache and MySQL.
 - Extract then move to htdocs localhost
 - Run in browser with URL `localhost/web-apotek`
 - Done
+
+#### Cara Install 
+E-KAS memerlukan Webserver dan Database Server seperti Apache dan MySQL. 
+Langkah langkah instalasi :
+- Download ZIP di repositori [Github](https://github.com/syarifyahyash/web-apotek/)
+- Ekstrak lalu pindahkan ke htdocs localhost
+- jalankan di browser dengan URL `localhost/web-apotek`
+- Selesai
