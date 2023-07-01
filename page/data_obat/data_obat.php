@@ -12,28 +12,18 @@ default:
 <div class="row">
 	<div class="col-sm">
 	  <h4 class="float-left">Data Obat</h4> 
-	  <a href="?menu=data_obat&submenu=tambah" class="btn-add btn btn-success float-right" id="addData">Tambah Data Obat</a>
-	  <!-- <form method="POST" action="">
-		<div class="input-group mb-3">
-		  <div class="input-group-prepend">
-			<a href="?menu=data_obat&submenu=tambah" class="btn btn-success" id="addData">Tambah Data Obat</a>
-		  </div>
-		  <input type="text" name="kata" class="form-control" placeholder="Cari Nama Obat" autocomplete="off">
-		  <div class="input-group-append">
-			<button class="btn btn-success btn-sm" id="cari" type="submit" name="cari">Cari</button>
-		  </div>
-		</div>
-	  </form> -->
+	  	<a href="?menu=data_obat&submenu=tambah" class="btn-add btn btn-success float-right"  style="border-radius: 5px;" id="addData">Tambah Data Obat</a>
+	  </form>
 	 <div class="table-responsive">
 	 <table id="myTable" class="table table-hover">
 	  <thead class="label-table">
 		<tr>
 			<th >No</th>
-			<th >Nama Obat</th>
+			<th class="col-sm-2">Nama Obat</th>
 			<th >Kategori</th>
 			<th >Indikasi</th>
 			<th >Stok</th>
-			<th class="p-1">Tgl Expired</th>
+			<th >Tgl Expired</th>
 			<th >Harga</th>
 			<th class="text-center">Edit</th>
 			<th class="text-center">Delete</th>
@@ -70,11 +60,11 @@ default:
 			<td><?= $d['tanggal_expired']; ?></td>
 			<td><?= $d['harga']; ?></td>
 			<td>
-				<a class="btn-edit btn btn-outline-success btn-sm text-center" id="edit" href="?menu=data_obat&submenu=edit&id=<?= $d['id_obat'];?>">Edit</a>
+				<a class="btn-edit btn btn-outline-success btn-sm text-center" style="border-radius: 5px;" id="edit" href="?menu=data_obat&submenu=edit&id=<?= $d['id_obat'];?>">Edit</a>
 			</td>
 			<td>
-				<a class="btn-del btn btn-outline-danger btn-sm text-center" id="hapus" href="?menu=data_obat&submenu=hapus&id=<?= $d['id_obat'];?>" 
-				onClick="return confirm('Yakin mau di hapus?');">Delete</a>
+				<a class="btn-del btn btn-outline-danger btn-sm text-center"  style="border-radius: 5px;" id="hapus" href="?menu=data_obat&submenu=hapus&id=<?= $d['id_obat'];?>" 
+				onClick="return confirm('Hapus Obat ?');">Delete</a>
 			</td>
 		</tr>
 	<?php 
@@ -88,20 +78,73 @@ default:
 	<div>
 	<?php $status=isset($_GET['status'])?$_GET['status']:"";?>
 	<?php if($status=="sukses"){ ?>
-		<div class="alert alert-success alert-dismissible fade show" role="alert">
-			<strong>Tambah Data Sukses</strong> Data Telah Berhasil Di Tambahkan
-			<button type="button" class="close" data-dismiss="alert" aria-label="Close">
-				<span aria-hidden="true">&times;</span>
-			</button>
-		</div>
+		<script>
+			iziToast.success({
+				title: 'Tambah Obat',
+				message: 'Berhasil!',
+				position: 'topCenter',
+				timeout: 5000,
+				transitionIn: 'bounceInUp',
+				transitionOut: 'fadeOutUp'
+			});
+		</script>
 	<?php } else if($status=="gagal"){ ?>
-		<div class="alert alert-danger alert-dismissible fade show" role="alert">
-			<strong>Tambah Data Gagal</strong> Data Gagal Di Tambahkan
-			<button type="button" class="close" data-dismiss="alert" aria-label="Close">
-				<span aria-hidden="true">&times;</span>
-			</button>
-		</div>
-	<?php } else if(empty($status)){ ?>
+		<script>
+			iziToast.error({
+				title: 'Tambah Obat',
+				message: 'Gagal!',
+				position: 'topCenter',
+				timeout: 5000,
+				transitionIn: 'bounceInUp',
+				transitionOut: 'fadeOutUp'
+			});
+		</script>
+	<?php } elseif($status=="sukses_update"){ ?>
+		<script>
+			iziToast.success({
+				title: 'Update Obat',
+				message: 'Berhasil!',
+				position: 'topCenter',
+				timeout: 5000,
+				transitionIn: 'bounceInUp',
+				transitionOut: 'fadeOutUp'
+			});
+		</script>
+	<?php } elseif($status=="gagal_update"){ ?>
+		<script>
+			iziToast.error({
+				title: 'Update Obat',
+				message: 'Gagal!',
+				position: 'topCenter',
+				timeout: 5000,
+				transitionIn: 'bounceInUp',
+				transitionOut: 'fadeOutUp'
+			});
+		</script>
+	<?php } elseif($status=="sukses_hapus"){ ?>
+		<script>
+			iziToast.success({
+				title: 'Hapus Obat',
+				message: 'Berhasil!',
+				position: 'topCenter',
+				timeout: 5000,
+				transitionIn: 'bounceInUp',
+				transitionOut: 'fadeOutUp'
+			});
+		</script>
+	<?php } elseif($status=="gagal_hapus"){ ?>
+		<script>
+			iziToast.error({
+				title: 'Hapus Obat',
+				message: 'Gagal!',
+				position: 'topCenter',
+				timeout: 5000,
+				transitionIn: 'bounceInUp',
+				transitionOut: 'fadeOutUp'
+			});
+		</script>
+	<?php }
+	else if(empty($status)){ ?>
 	
 	<?php }?>
 		
@@ -112,35 +155,72 @@ break;
 
 case "tambah":
 ?>
-<h1 class="text-center" style="margin-top:60px;"> Tambah Data Obat</h1>
-<hr/>
+<h2 class="text-center" style="margin-top:60px;"> Tambah Data Obat</h2>
+<hr>
 <div class="row">
-	<div class="col-sm-4">
+	<div class="col-sm-3"></div>
+	<div class="col-sm-6">
 		<form method="POST">
-			<div class="form-group">
-				<label for="nama_obat">Nama Obat</label><br/>
+			<div class="input-group mb-4">
+				<div class="input-group-prepend">
+					<div class="input-group-text" style="width: 130px;">Nama Obat</div>
+				</div>
 				<input type="text" class="form-control" name="nama_obat" id="nama_obat" required placeholder="Tulis nama obat" autocomplete="off" />
 			</div>
 			<div class="form-group">
-				<label for="indikasi">Indikasi</label><br/>
+				<div class="input-group mb-4">
+					<div class="input-group-prepend">
+						<div class="input-group-text" style="width: 130px;">Kategori</div>
+					</div>
+					<select name="kategori" class="custom-select" id="inputGroupSelect01">
+					<?php
+						$query = mysqli_query($koneksi, "SELECT * FROM kategori");
+		
+						// Looping untuk menampilkan opsi
+						while ($kategori = mysqli_fetch_assoc($query)) {
+							echo '<option value="' . $kategori['id_kategori'] . '">' . $kategori['nama_kategori'] . '</option>';
+						}
+					?>
+				</select>
+				</div>
+			</div>
+			<div class="form-group">
+				<div class="input-group mb-4">
+					<div class="input-group-prepend">
+						<div class="input-group-text" style="width: 130px;">Indikasi</div>
+					</div>
 				<input type="text" class="form-control"  name="indikasi" id="indikasi"/>
+				</div>
 			</div>
 			<div class="form-group">
-				<label for="stok">Stok</label><br/>
-				<input type="text" class="form-control"  name="stok" id="stok"/>
+				<div class="input-group mb-4">
+					<div class="input-group-prepend">
+						<div class="input-group-text" style="width: 130px;">Stok</div>
+					</div>
+				<input type="number" class="form-control"  name="stok" id="stok"/>
+				</div>
 			</div>
 			<div class="form-group">
-				<label for="tglExp">Tanggal Expired</label><br/>
+				<div class="input-group mb-4">
+					<div class="input-group-prepend">
+						<div class="input-group-text" style="width: 130px;">Tanggal Expired</div>
+					</div>
 				<input type="date" class="form-control"  name="tglExp" id="tglExp"/>
+				</div>
 			</div>
 			<div class="form-group">
-				<label for="harga">Harga</label><br/>
+				<div class="input-group mb-4">
+					<div class="input-group-prepend">
+						<div class="input-group-text" style="width: 130px;">Harga</div>
+					</div>
 				<input type="number" class="form-control" name="harga" id="harga" value="1000" required autocomplete="off"/>
+				</div>
 			</div>
-			<button type="submit" name="submit" class="btn btn-primary">Tambah Data</button>
-			<a href="?menu=data_obat" class="btn btn-info">Kembali</a>
+			<button type="submit" name="submit" class="btn btn-success float-left">Tambah Data</button>
+			<a href="?menu=data_obat" class="btn btn-danger float-right">Kembali</a>
 		</form>
 	</div>
+	<div class="col-sm-3"></div>
 </div> <!-- end row -->
 <?php 
 if(isset($_POST['submit'])){ //jika tombol submit di klik
@@ -148,11 +228,12 @@ if(isset($_POST['submit'])){ //jika tombol submit di klik
 	//mengabaikan tanda petik
 	//$nama=mysqli_real_escape_string($koneksi, $_POST['nama']); 
 	$nama_obat=$_POST['nama_obat']; 
+	$kate=$_POST['kategori']; 
 	$indikasi=$_POST['indikasi']; //mengabaikan tag html; 
 	$stok=$_POST['stok'];
 	$tgl=$_POST['tglExp'];
 	$harga=$_POST['harga'];
-	$query=mysqli_query($koneksi, "INSERT INTO obat VALUES (NULL,'$nama_obat','$indikasi','$stok','$tgl','$harga') ");
+	$query=mysqli_query($koneksi, "INSERT INTO obat VALUES (NULL,'$nama_obat','$kate','$indikasi','$stok','$tgl','$harga') ");
 	$sukses=mysqli_affected_rows($koneksi);
 	if($sukses > 0){
 		echo "<script>
@@ -172,59 +253,97 @@ case "edit":
     $edit=mysqli_query($koneksi,"SELECT * FROM obat WHERE id_obat='$id'");
     $d=mysqli_fetch_array($edit);
 ?>
-<h1 class="text-center" style="margin-top:60px;"> Edit Data Obat</h1>
+<h2 class="text-center" style="margin-top:60px;"> Edit Data Obat</h2>
 <hr/>
 <div class="row">
-	<div class="col-sm-4">
+	<div class="col-sm-3"></div>
+	<div class="col-sm-6">
 		<form method="POST">
 			<input type="hidden" name="id_obat" value="<?=$d['id_obat'];?>" />
 			<div class="form-group">
-				<label for="nama_obat">Nama Obat</label><br/>
+				<div class="input-group mb-4">
+				<div class="input-group-prepend">
+					<div class="input-group-text" style="width: 130px;">Nama Obat</div>
+				</div>
 				<input type="text" class="form-control" name="nama_obat" id="nama_obat" value="<?=$d['nama_obat'];?>" required placeholder="tulis nama obat" autocomplete="off" />
+				</div>
 			</div>
 			<div class="form-group">
-				<label for="indikasi">Indikasi</label><br/>
+				<div class="input-group mb-4">
+					<div class="input-group-prepend">
+						<div class="input-group-text" style="width: 130px;">Kategori</div>
+					</div>
+					<select name="kategori" class="custom-select" id="inputGroupSelect01">
+					<?php
+						$query = mysqli_query($koneksi, "SELECT * FROM kategori");
+						while ($kategori = mysqli_fetch_assoc($query)) {
+							$selected = ($kategori['id_kategori'] == $d['kategori_obat']) ? 'selected' : '';
+							echo '<option value="' . $kategori['id_kategori'] . '" ' . $selected . '>' . $kategori['nama_kategori'] . '</option>';
+						}
+					?>
+				</select>
+				</div>
+			</div>
+			<div class="form-group">
+				<div class="input-group mb-4">
+				<div class="input-group-prepend">
+					<div class="input-group-text" style="width: 130px;">Indikasi</div>
+				</div>
 				<input type="text" class="form-control"  name="indikasi" id="indikasi" value="<?=$d['indikasi'];?>"/>
+				</div>
 			</div>
 			<div class="form-group">
-				<label for="stok">Stok</label><br/>
+				<div class="input-group mb-4">
+				<div class="input-group-prepend">
+					<div class="input-group-text" style="width: 130px;">Stok</div>
+				</div>
 				<input type="number" class="form-control"  name="stok" id="stok" value="<?=$d['stok_obat'];?>"/>
+				</div>
 			</div>
 			<div class="form-group">
-				<label for="tglExp">Tanggal Expired</label><br/>
+				<div class="input-group mb-4">
+				<div class="input-group-prepend">
+					<div class="input-group-text" style="width: 130px;">Tanggal Expired</div>
+				</div>
 				<input type="date" class="form-control" name="tglExp" id="tglExp" value="<?=$d['tanggal_expired'];?>" required autocomplete="off"/>
+				</div>
 			</div>
 			<div class="form-group">
-				<label for="harga">Harga</label><br/>
+				<div class="input-group mb-4">
+				<div class="input-group-prepend">
+					<div class="input-group-text" style="width: 130px;">Harga</div>
+				</div>
 				<input type="number" class="form-control" name="harga" id="harga" value="<?=$d['harga'];?>" required autocomplete="off"/>
+				</div>
 			</div>
-			
-			<button type="submit" name="submit" class="btn btn-primary">Edit Data</button>
-			<a href="?menu=data_obat" class="btn btn-info">Kembali</a>
+			<button type="submit" name="submit" class="btn btn-success float-left">Update Obat</button>
+			<a href="?menu=data_obat" class="btn btn-danger float-right">Kembali</a>
 		</form>
 	</div>
+	<div class="col-sm-3"></div>
 </div> <!-- end row -->
 <?php 
 if(isset($_POST['submit'])){ //jika tombol submit di klik
 	//ambil data dari form input
 	$id=$_POST['id_obat'];
 	$nama_obat=mysqli_real_escape_string($koneksi, $_POST['nama_obat']); //mengabaikan tanda petik
+	$kate=$_POST['kategori']; 
 	$indikasi=$_POST['indikasi']; //mengabaikan tag html;
 	$stok=$_POST['stok'];
 	$tgl=$_POST['tglExp'];
 	$harga=$_POST['harga'];
 	$query=mysqli_query($koneksi, "UPDATE obat SET 
-	nama_obat='$nama_obat', indikasi='$indikasi', stok_obat='$stok', tanggal_expired='$tgl', harga='$harga'
+	nama_obat='$nama_obat',kategori_obat='$kate', indikasi='$indikasi', stok_obat='$stok', tanggal_expired='$tgl', harga='$harga'
 	WHERE id_obat='$id' ");
 	$sukses=mysqli_affected_rows($koneksi);
 	if($sukses > 0){
-		echo "<script>alert('Data Berhasil di UBAH');
-			window.location.href='?menu=data_obat';
-		</script>";
+		echo "<script>
+				window.location.href='?menu=data_obat&status=sukses_update';
+			</script>";
 	}else{
-		echo "<script>alert('Data GAGAL di UBAH');
-			window.location.href='?menu=data_obat';
-		</script>"; 
+		echo "<script>
+				window.location.href='?menu=data_obat&status=gagal_update';
+			</script>"; 
 	}
 }
 break;
@@ -237,11 +356,13 @@ case "hapus":
   }else{
 	$hapus=mysqli_query($koneksi,"DELETE FROM obat WHERE id_obat='$_GET[id]'");
 	if($hapus){
-      echo "<script>
-      window.location=('?menu=data_obat')</script>";
+		echo "<script>
+				window.location.href='?menu=data_obat&status=sukses_hapus';
+			</script>";
     }else{
-      echo "<script>alert('Hapus Data Gagal');
-      window.location=('?menu=data_obat')</script>";
+		echo "<script>
+				window.location.href='?menu=data_obat&status=gagal_hapus';
+		</script>";
     }
   } 
 break;

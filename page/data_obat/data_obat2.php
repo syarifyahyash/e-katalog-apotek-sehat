@@ -23,7 +23,7 @@ $action=isset($_GET['submenu'])? $_GET['submenu'] :'';
 	<thead class="label-table">
 		<tr>
 			<th>No</th>
-			<th>Nama Obat</th>
+			<th class="col-sm-2">Nama Obat</th>
 			<th>Kategori</th>
 			<th>Indikasi</th>
 			<th>Stok</th>

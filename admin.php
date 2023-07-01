@@ -28,7 +28,7 @@ if (empty($_SESSION['username'])){
     $(document).ready( function () {
       $('#myTable').DataTable({
         lengthMenu: [3, 5, 7, 8,], // Menampilkan opsi entri: 10, 25, 50, 100
-        pageLength: 8, // Jumlah entri yang ditampilkan secara default
+        pageLength: 7, // Jumlah entri yang ditampilkan secara default
         
       });
     } );
