@@ -30,6 +30,6 @@ Langkah langkah instalasi :
 - jalankan di browser dengan URL `localhost/e-katalog-apotek-sehat`
 - Selesai
 
-## Anggota
+## Authors
 - Muh. Syarif Yahya S.H. - 2021520030
 - Abdul Adim Mubarok     - 2021520009
