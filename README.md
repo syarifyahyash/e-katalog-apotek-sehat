@@ -32,4 +32,4 @@ Langkah langkah instalasi :
 
 ## Anggota
 - Muh. Syarif Yahya S.H. - 2021520030
-- Abdul Adim Mubarok - 2021520009
+- Abdul Adim Mubarok     - 2021520009
