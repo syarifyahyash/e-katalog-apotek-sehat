@@ -1,4 +1,4 @@
-# E-Katalog Apotik Sehat
+# E-Katalog Apotik Sehat Banged
 
 E-KAS adalah Aplikasi Apotek E-Katalog atau Katalog Online Berbasis Web untuk membantu calon pembeli. 
 Dengan adanya E-KAS, calon pembeli dapat mengetahui informasi obat-obatan yang akan dibeli seperti ketersediaan obat, harga obat dan lainnya. 
