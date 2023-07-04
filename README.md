@@ -17,8 +17,8 @@ Dan tentu saja E-KAS tersedia di [repositori publik](https://github.com/syarifya
 ## Installation
 E-KAS requires a Webserver and Database Server such as Apache and MySQL.
 
-- Download ZIP in repository [Github](https://github.com/syarifyahyash/web-apotek/) or Clone this repo
-- Extract then move to htdocs localhost
+- Download ZIP in repository [Github](https://github.com/syarifyahyash/web-apotek/) or Clone this repo.
+- Extract then move to htdocs localhost.
 - Run in browser with URL `localhost/e-katalog-apotek-sehat`
 - Done
 
