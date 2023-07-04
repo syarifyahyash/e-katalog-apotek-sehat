@@ -32,6 +32,14 @@ if (empty($_SESSION['username'])){
         
       });
     } );
+    $(document).ready( function () {
+      $('#myTableJadwal').DataTable({
+        lengthMenu: [7], // Menampilkan opsi entri: 10, 25, 50, 100
+        pageLength: 7, // Jumlah entri yang ditampilkan secara default
+        dom : rt
+        
+      });
+    });
     </script>  
 
     <title>Apotek Web Katalog</title>

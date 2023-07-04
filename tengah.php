@@ -15,9 +15,9 @@ elseif ($menu=='data_obat'){
   }
 }
 
-// Bagian sepakbola
-elseif ($menu=='sepakbola'){
-    include "page/sepakbola/sepakbola.php";   
+// Bagian jadwal
+elseif ($menu=='jadwal'){
+    include "page/jadwal/jadwal.php";   
 }
 
 // Apabila modul tidak ditemukan

@@ -11,6 +11,9 @@ $menu=isset($_GET['menu'])?$_GET['menu']:"home";
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
+    <li class="nav-item <?=($menu=="jadwal")?"active":""?>">
+        <a class="nav-link" href="?menu=jadwal">Jadwal</a>
+    </li>
 	  <li class="nav-item <?=($menu=="data_obat")?"active":""?>">
         <a class="nav-link" href="?menu=data_obat">Data Obat</a>
     </li>
