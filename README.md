@@ -1,4 +1,4 @@
-# E-Katalog Apotik Sehat
+# E-Katalog Apotik Sehat Banged
 
 E-KAS adalah Aplikasi Apotek E-Katalog atau Katalog Online Berbasis Web untuk membantu calon pembeli. 
 Dengan adanya E-KAS, calon pembeli dapat mengetahui informasi obat-obatan yang akan dibeli seperti ketersediaan obat, harga obat dan lainnya. 
@@ -19,7 +19,7 @@ E-KAS requires a Webserver and Database Server such as Apache and MySQL.
 
 - Download ZIP in repository [Github](https://github.com/syarifyahyash/web-apotek/)
 - Extract then move to htdocs localhost
-- Run in browser with URL `localhost/web-apotek`
+- Run in browser with URL `localhost/e-katalog-apotek-sehat`
 - Done
 
 ## Cara Install 
@@ -27,9 +27,9 @@ E-KAS memerlukan Webserver dan Database Server seperti Apache dan MySQL.
 Langkah langkah instalasi :
 - Download ZIP di repositori [Github](https://github.com/syarifyahyash/web-apotek/)
 - Ekstrak lalu pindahkan ke htdocs localhost
-- jalankan di browser dengan URL `localhost/web-apotek`
+- jalankan di browser dengan URL `localhost/e-katalog-apotek-sehat`
 - Selesai
 
-## Anggota
+## Authors
 - Muh. Syarif Yahya S.H. - 2021520030
-- Abdul Adim Mubarok - 2021520009
+- Abdul Adim Mubarok     - 2021520009
