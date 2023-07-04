@@ -12,7 +12,7 @@ E-KAS Menggunakan beberapa bahasa pemrograman, framework dan library agar dapat 
 - [iziToast](https://izitoast.marcelodolza.com/) - Plugin notifikasi yang elegan, responsif, fleksibel, dan ringan tanpa dependensi.
 - [DataTable](https://datatables.net/) - Tambahkan kontrol interaksi lanjutan ke tabel HTML Anda dengan cara gratis & mudah.
 
-Dan tentu saja E-KAS tersedia di [repositori publik](https://github.com/syarifyahyash/web-apotek/) di Github.
+Dan tentu saja E-KAS tersedia di [repositori publik](https://github.com/syarifyahyash/e-katalog-apotek-sehat) di Github.
 
 ## Installation
 E-KAS requires a Webserver and Database Server such as Apache and MySQL.
