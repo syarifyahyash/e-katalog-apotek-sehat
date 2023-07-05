@@ -83,3 +83,25 @@ input[type=password]{
     color: #12d826;
     
 }
+
+/* Tampilan untuk perangkat dengan lebar maksimal 768px (mobile) */
+@media (max-width: 768px) {
+    .logo {
+      width: 10%;
+      height: auto;
+    }
+    
+    .container {
+      width: 75%;
+      padding: 20px;
+    }
+    
+    input[type="text"],
+    input[type="password"] {
+      font-size: 14px;
+      padding: 10px;
+    }
+  }
+
+  
+  
