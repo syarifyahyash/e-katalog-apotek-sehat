@@ -49,7 +49,7 @@
         <tr>
 			<td class="text-center">7</td>
             <td class="text-center">Minggu</td>
-            <td class="text-center">Tutup</td>
+            <td class="text-center">09:00 - 15:00</td>
 		</tr>
 	  </tbody>
 	</table>
