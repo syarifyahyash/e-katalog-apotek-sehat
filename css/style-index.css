@@ -84,15 +84,15 @@ input[type=password]{
     
 }
 
-/* Tampilan untuk perangkat dengan lebar maksimal 768px (mobile) */
-@media (max-width: 768px) {
+    /* Tampilan untuk perangkat mobile */
+@media (max-width: 576px) {
     .logo {
       width: 10%;
       height: auto;
     }
     
     .container {
-      width: 75%;
+      width: 90%;
       padding: 20px;
     }
     
@@ -103,5 +103,23 @@ input[type=password]{
     }
   }
 
+  /* Tampilan untuk perangkat tablet */
+@media (min-width: 768px) and (max-width: 992px) {
+    .logo {
+      width: 10%;
+      height: auto;
+    }
+    
+    .container {
+      width: 50%;
+      padding: 20px;
+    }
+    
+    input[type="text"],
+    input[type="password"] {
+      font-size: 14px;
+      padding: 10px;
+    }
+  }
   
   
