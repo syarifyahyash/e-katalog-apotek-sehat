@@ -5,11 +5,11 @@ $action=isset($_GET['submenu'])? $_GET['submenu'] :'';
 <head>
 	<link rel="stylesheet" href="css/style-obat.css">
 </head>
-<h1 class="text-center" style="margin-top:60px;">Katalog Obat</h1>
+<h1 class="judul text-center" style="margin-top:60px;">Katalog Obat</h1>
 <hr/>
 <div class="row">
 	<div class="col-sm">
-	<h4>Data Obat</h4>
+	<h4 class="sub-judul">Data Obat</h4>
 	<!-- <form method="POST" action="">
 		<div class="input-group mb-3">
 		<input type="text" name="kata" class="form-control" placeholder="Cari Nama Obat" autocomplete="off">
@@ -26,9 +26,9 @@ $action=isset($_GET['submenu'])? $_GET['submenu'] :'';
 			<th class="col-sm-2">Nama Obat</th>
 			<th>Kategori</th>
 			<th>Indikasi</th>
+			<th>Harga</th>
 			<th>Stok</th>
 			<th>Tgl Expired</th>
-			<th>Harga</th>
 		</tr>
 	  </thead>
 	  <tbody>
@@ -58,9 +58,9 @@ $action=isset($_GET['submenu'])? $_GET['submenu'] :'';
 			<td><?= $d['nama_obat']; ?></td>
 			<td><?= $jenis_obat_array[$d['kategori_obat']]; ?></td>
 			<td><?= $d['indikasi']; ?></td>
+			<td><?= $d['harga']; ?></td>
 			<td><?= $d['stok_obat']; ?></td>
 			<td><?= $d['tanggal_expired']; ?></td>
-			<td><?= $d['harga']; ?></td>
 		</tr>
 	<?php 
 	$no++;
