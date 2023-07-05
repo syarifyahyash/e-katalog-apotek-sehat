@@ -13,6 +13,7 @@ if (empty($_SESSION['username'])){
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 	  <link rel="stylesheet" href="bootstrap-4/css/bootstrap.min.css">
 	  <link rel="icon" type="image/png" href="favicon-16x16.png" sizes="16x16" />
+    <link rel="stylesheet" href="css/style-obat.css">
 
     <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.min.css">
     <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
@@ -81,7 +82,7 @@ include "menu.php";
 <!-- Footer -->
 <footer>
   <!-- Copyright -->
-  <div class="fixed-bottom text-center p-2" style="background-color: rgba(0, 0, 0, 0.05);">
+  <div class="footer fixed-bottom text-center p-2" style="background-color: #dddddd;">
     © <?php echo date("Y"); ?> Copyright:
     <a class="text-reset fw-bold" href="https://unira.ac.id/">INFORMATIKA UNIRA</a>
   </div>
