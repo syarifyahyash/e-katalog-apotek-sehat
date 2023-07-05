@@ -31,3 +31,63 @@
     border-radius: 1px;
     width: 110px;
 }
+
+/* Tampilan untuk perangkat mobile buat font lebih kecil pada label dan td dalam table*/
+@media (max-width: 576px) {
+    .judul{
+        font-size: 24px;
+    }
+
+    .sub-judul{
+        font-size: 20px;
+    }
+
+    .label-table {
+        font-size: 12px;
+    }
+
+    td {
+        font-size: 12px;
+    }
+
+    .dataTables_length,
+    .dataTables_filter,
+    .dataTables_info,
+    .dataTables_paginate {
+        font-size: 11px;
+    }
+    
+    .footer{
+        font-size: 12px;
+    }
+}
+
+/* Tampilan untuk perangkat tablet, buat lebih besar dari mobile */
+@media (min-width: 576px) and (max-width: 768px) {
+    .judul{
+        font-size: 30px;
+    }
+
+    .sub-judul{
+        font-size: 24px;
+    }
+
+    .label-table {
+        font-size: 14px;
+    }
+
+    td {
+        font-size: 14px;
+    }
+
+    .dataTables_length,
+    .dataTables_filter,
+    .dataTables_info,
+    .dataTables_paginate {
+        font-size: 13px;
+    }
+
+    .footer{
+        font-size: 14px;
+    }
+}
