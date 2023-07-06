@@ -2,7 +2,7 @@
 <div class="jumbotron" style="margin-top: 90px;">
   <h1 class="display-4">Selamat Datang!</h1>
   <h1 class="h4"> Halo, <?php echo $_SESSION['nama_lengkap'];?></h1>
-  <p class="lead">Halaman ini adalah Halaman Dashboard Website Apotik Sehat</p>
+  <p class="lead">Halaman ini adalah Halaman Dashboard Website E-Katalog Apotik Sehat</p>
   <hr class="my-4">
 
 <?php
