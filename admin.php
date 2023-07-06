@@ -84,7 +84,9 @@ include "menu.php";
   <!-- Copyright -->
   <div class="footer fixed-bottom text-center p-2" style="background-color: #dddddd;">
     © <?php echo date("Y"); ?> Copyright:
-    <a class="text-reset fw-bold" href="https://unira.ac.id/">INFORMATIKA UNIRA</a>
+    <!-- <a class="text-reset fw-bold" href="https://unira.ac.id/">INFORMATIKA UNIRA</a> -->
+    <a class="text-reset fw-bold" href="https://github.com/syarifyahyash">Muh. Syarif Yahya</a> &
+    <a class="text-reset fw-bold" href="https://github.com/pecandu-oksigen">Abdul Adim Mubarok</a>
   </div>
   <!-- Copyright -->
 </footer>
