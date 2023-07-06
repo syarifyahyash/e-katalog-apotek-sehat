@@ -20,7 +20,7 @@ if (!empty($_SESSION['username'])){
 	<link rel="stylesheet" href="izitoast/dist/css/iziToast.min.css">
 	<script src="izitoast/dist/js/iziToast.min.js" type="text/javascript"></script>
 
-	<title>Apotek Web Catalog</title>
+	<title>E-Katalog Apotik Sehat</title>
 	<link rel="icon" type="image/png" href="img/logo_apotik.png" sizes="16x16"/>
 </head>
 <body>
