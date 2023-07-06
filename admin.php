@@ -43,7 +43,8 @@ if (empty($_SESSION['username'])){
     });
     </script>  
 
-    <title>Apotek Web Katalog</title>
+    <title>E-KAS | Home</title>
+    <link rel="icon" type="image/png" href="img/logo_apotik.png" sizes="16x16"/>
   
 </head>
 <body class="mt-5">
